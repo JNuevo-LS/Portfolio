@@ -1,0 +1,211 @@
+.header {
+    /* background-color:  #82659a ; */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    z-index: 1;
+}
+
+.headerlinks {
+    float: left;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.headerlinks p {
+    padding: 25px;
+    z-index: 9999;
+    background-color: #514064;
+    border: 3px solid black;
+    margin: 0;
+}
+
+.column {
+    float: left;
+}
+
+.column.side {
+    text-align: center;
+    position: fixed;
+    width: 10%;
+    top: 35%;
+    bottom: 35%;
+    /* background-color: #ADA8BE; */
+    font-size: 1.4vw;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: 0.6vw double;
+    border-top: 0.6vw double;
+    border-right: 0.6vw double;
+    border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%;
+    z-index: 9999;
+}
+
+.column.middle {
+    width: 90%;
+}
+
+.column.middle p {
+    font-size: 1.3vw;
+    position: relative;
+    top: 3.5vh;
+    left: 5vw;
+    justify-self: center;
+    z-index: 1;
+}
+
+.column.middle h1 {
+    position: absolute;
+    right: 2.5vw;
+    left: 3vw;
+    z-index: 1;
+    font-size: 2.2vw;
+}
+
+.column.middle img {
+    position: fixed;
+    opacity: 0.125;
+    transform-origin: center;
+    animation: spin 120s linear infinite;
+    user-select: none;
+    width: 200%;
+    height: 200%;
+    z-index: -9999;
+    bottom: -35%;
+    object-fit: contain;
+    justify-self: center;
+    left: -42.5%;
+}
+
+body{
+    background:  #82659a ;
+    background-size: cover;
+    font-family: 'Trebuchet MS', sans-serif;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+.container {
+    display: inline-block;
+}
+
+.typed-out{
+    overflow: hidden;
+    border-right: .15em solid black;
+    white-space: nowrap;
+    text-align: center;
+    width: 0;
+    animation:
+    typing 1s steps(20, end) forwards, blink .85s infinite;
+    font-size: 1.8vw;
+    justify-self: center;
+    position: relative;
+    top: 4vw;
+    left: 5.5vw;
+}
+@keyframes typing {
+    from {width: 0;}
+    to {width: 100%;}
+}
+@keyframes blink {
+    from {border-color: transparent;}
+    to {border-color: #011502;}
+}
+
+.content {
+    flex-grow: 1;
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+    padding: 1px;
+    position: fixed;
+    bottom: 0;
+    border-top: 0.4vw double;
+    border-color: #011502;
+    font-size: 1.05vw;
+}
+
+a {
+    text-decoration: none;
+    color: thistle;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+@media screen and (max-width: 850px) {
+    .column.middle{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .column.side {
+        height: 12%;
+        top: 5em;
+        /*bottom: 5%;*/
+        border: unset;
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        z-index: 0;
+    }
+    .column.side p {
+        font-size: 2em;
+    }
+    footer {
+        width: 100%;
+        /* border-top: unset; */
+        padding: unset;
+        margin-top: 1vh;
+        font-size: 0.7em;
+    }
+    body {
+        min-height: unset;
+    }
+    .column.middle p {
+        font-size: 0.8em;
+        left: unset;
+        bottom: unset;
+        top: unset;
+        line-height: 1.25em;
+    }
+    .column.middle h1 {
+        font-size: 1.5em;
+        left: 0;
+        top: unset;
+        bottom: unset;
+    }
+    .typed-out {
+        font-size: 1.2em;
+        left: 2.5em;
+        top: 2.5em;
+        bottom: unset;
+        float: unset;
+        animation: typingPhone 1s steps(20, end) forwards, blink .85s infinite;
+    }
+    @keyframes typingPhone {
+        from {width: 0%;}
+        to {width: 75%;}
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        grid-column: auto;
+    }
+}

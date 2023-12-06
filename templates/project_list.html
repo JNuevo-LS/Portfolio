@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title> JN Project List</title>
+    <link rel="icon" type="image/x-icon" href="https://drive.google.com/uc?export=view&id=1eSzX4X1BLzVuTJBLJi8Qol17VSYr09gr">
+</head>
+
+<header>
+    <div class="header">
+        <a href="/">
+         <img src="https://drive.google.com/uc?export=view&id=1eSzX4X1BLzVuTJBLJi8Qol17VSYr09gr" alt="PLACEHOLDER LOGO" width="60px" height="60px">
+        </a>
+    </div>
+</header>
+
+<link rel="stylesheet" href="static\css\listpage.css">
+
+<body>
+    <div class = 'column side'>
+        <p><a href='/aboutme'>About Me</a></p>
+        <p><a href="/list">Projects</a></p>
+        <p><a href="https://docs.google.com/document/d/1tTtJDfMkTZrcORvv9XpdaCbCncpXfuas/edit?usp=sharing&ouid=108256949752524620193&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer"> Resume </a></p>
+    </div>
+
+    <h1>List of Completed Projects</h1>   
+    
+    <table>
+        <thead> 
+            <tr> 
+                <th>Project</th>
+                <th>Description </th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for project in projects %}
+            <tr>
+                <td><a href = "{{project['github_link']}}" target="_blank" rel="noopener noopener"> {{ project['title'] }} </a></td>
+                <td>{{ project['content'] }}</td>
+                <td>{{ project['date_created'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div> 
+
+<div class = 'container'>
+    <footer>
+      <p> <a href="https://www.linkedin.com/in/jorge-nuevo-ramos/" target="_blank" rel="noopener noreferrer"> LinkedIn</a> |
+          <a href="https://github.com/JNuevo-LS/Projects" target="_blank" rel="noopener noreferrer"> github</a> |
+          <a href="https://fiu.joinhandshake.com/stu/users/49185040" target="_blank" rel="noopener noreferrer"> Handshake</a>
+          | jnuev004@fiu.edu | 786-597-0761
+      </p>
+    </footer>
+</div> 
+
+</body>
+
+</html>
